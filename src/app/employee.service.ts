@@ -2,12 +2,13 @@ import { Employee } from './employee';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-  private apiServerUrl='http://localhost:8080'
+  private apiServerUrl=environment.apiUrl;
   constructor(private http:HttpClient) { }
   public getEmployees() :Observable<Employee[]>{
     return this.http.get<any>(`${this.apiServerUrl}/employee/all`)
