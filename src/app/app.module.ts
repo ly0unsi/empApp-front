@@ -6,16 +6,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeeComponent } from './employee/employee.component';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
-    EmployeeComponent
+    AppComponent
   ],
   imports: [
-    CommonModule,
     BrowserModule,
-    FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
