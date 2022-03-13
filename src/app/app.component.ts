@@ -10,6 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent implements OnInit{
   public employees: Employee[]; 
+  public editEmployee:Employee;
   constructor(private empService:EmployeeService) { }
 
   ngOnInit(): void {
@@ -32,7 +33,6 @@ export class AppComponent implements OnInit{
 
     this.empService.addEmployee(addForm.value).subscribe(
       (response: Employee) => {
-        console.log(response);
         this.getEmployees();
         addForm.reset();
       },
@@ -41,5 +41,8 @@ export class AppComponent implements OnInit{
         addForm.reset();
       }
     );
+  }
+  public onEditClick(emp:Employee){
+    this.editEmployee==emp;
   }
 }
